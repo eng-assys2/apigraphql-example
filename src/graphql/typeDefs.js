@@ -1,29 +1,7 @@
-const { gql } = require('apollo-server')
+import { fileLoader, mergeTypes } from "merge-graphql-schemas";
+import path from "path";
 
-// The GraphQL schema
-export default gql`
-  type User {
-    _id: ID!
-    name: String!
-    email: String!
-    active: String!
-  }
+const typesArray = fileLoader(path.join(__dirname, "modules", "**", "*.gql"));
+const typeDefs = mergeTypes(typesArray);
 
-  type Post {
-    _id: ID!
-    title: String!
-    content: String!
-    author: User!
-  }
-
-  type Query {
-    "A simple type for getting started!"
-    hello: String
-    users: [User!]!
-    getUserByEmail(email: String!): User!
-  }
-
-  type Mutation {
-    createUser(name: String!, email: String!): User!
-  }
-`
+export default typeDefs;

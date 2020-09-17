@@ -2,7 +2,7 @@ import { ApolloServer } from 'apollo-server'
 import mongoose from 'mongoose'
 
 const PORT = 5000
-const DB_IP = 'http://192.168.31.19/'
+const DB_IP = 'http://127.0.0.1/'
 
 function startServer({ typeDefs, resolvers }) {
   mongoose.connect(`mongodb://test:test@${DB_IP}:27017/graphql?authSource=admin`, {
