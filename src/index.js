@@ -1,6 +1,6 @@
-import startServer from "./start-server";
+import startServer from './start-server'
 
-import typeDefs from "./graphql/typeDefs";
-import resolvers from "./graphql/resolvers";
+import typeDefs from './graphql/typeDefs'
+import resolvers from './graphql/resolvers'
 
-startServer({ typeDefs, resolvers });
+startServer({ typeDefs, resolvers })

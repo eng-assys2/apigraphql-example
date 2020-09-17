@@ -1,22 +1,22 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose'
 
 const Schema = new mongoose.Schema({
   firstName: {
     type: String,
-    required: true
+    required: true,
   },
   lastName: {
     type: String,
-    required: true
+    required: true,
   },
   email: {
     type: String,
-    required: false
+    required: false,
   },
   active: {
     type: Boolean,
-    required: true
-  }
-});
+    required: true,
+  },
+})
 
-export default mongoose.model("User", Schema);
+export default mongoose.model('User', Schema)
